@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AboutUs Page</title>
+    <style>
+        @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+* {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+
+.header {
+  display:block;
+  position: fixed;
+  z-index: 12;
+  width: 100%;
+  background: #292c2f;
+  color: rgba(255, 255, 255, 0.5);
+  height: 50pt;
+}
+
+h1 {
+  display: inline-block;
+  position: absolute;
+  padding: 4pt;
+}
+
+
+
+
+
+/* Keyframes */
+@-webkit-keyframes circle {
+  0% {
+    width: 1px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 1px;
+    z-index: -1;
+    background: #eee;
+    border-radius: 100%;
+  }
+  100% {
+    background: #aaa;
+    height: 5000%;
+    width: 5000%;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0;
+  }
+}
+
+.about_us{
+  display: block;
+  width: 80%;
+  min-height: 60vh;
+  background: #34495e;
+  color: rgba(255, 255, 255, 0.7);
+  vertical-align: middle;
+  text-align: left;
+  position: relative;
+  padding: 150px 10% 50px 10%;
+}
+
+.about_us > h2{
+  display: block;
+  color: rgba(255, 255, 255, 1);
+  font-size: 32px;
+  line-height: 31px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin: 0 auto 30px;
+}
+
+.about_us > span {
+  display: block;
+  color: rgba(255, 255, 255, 1);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.75;
+  margin: 20px auto 10px;
+}
+
+.about_us > p{
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.75;
+  margin: 0 auto 10px;
+}
+
+.about_us > img{
+  display: block;
+  margin-bottom: 20px;
+}
+
+.about_us > .mission{
+  color: rgba(255, 255, 255, 1);
+  display: blcok;
+  width: 60%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: rgba(92,188,224,0.4);
+  margin-left: 20%;
+  padding: 5px 10px; 
+
+}
+
+.about_us > .mission > span{
+  display: block;
+  margin: 0 auto 10px;
+  font-size: x-large;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.75;
+}
+.about_us > .mission > p{
+  display: block;
+  color: rgba(255, 255, 255, 1);
+  margin: 0 auto 10px;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.75;
+}
+
+
+
+
+
+
+
+@media (max-width: 900px) {
+  
+  .header > #nav + label + nav.circle {
+    display: none;
+    width: 120px;
+    padding: 10px;
+    background-color :#292c2f;
+  }  
+}
+.about_us{
+    background-image: url(https://i.pinimg.com/originals/b2/fe/91/b2fe91505525ba942ae7d85a2cd7a6d4.gif);
+}
+
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+.heading{
+    background-image: url(https://i.pinimg.com/originals/b2/fe/91/b2fe91505525ba942ae7d85a2cd7a6d4.gif);
+    text-align: center;
+}
+
+ h2 {
+	 color: #c19bf5;
+	 font-size: 5vw;
+	 position: relative;
+	 text-transform: uppercase;
+	 -webkit-text-stroke: 0.3vw #f7f7fe;
+}
+ h2::before {
+	 top: 0;
+	 left: 0;
+	 width: 0;
+	 height: 100%;
+	 color: #8338ec;
+	 overflow: hidden;
+	 position: absolute;
+	 content: attr(data-text);
+	 border-right: 2px solid #c19bf5;
+	 -webkit-text-stroke: 0vw #f7f7fe;
+	 animation: animate 6s linear infinite;
+}
+ @keyframes animate {
+	 0%, 10%, 100% {
+		 width: 0;
+	}
+	 70%, 90% {
+		 width: 100%;
+	}
+}
+ 
+    </style>
+</head>
+<body>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
+   <div class="heading"> <h2 data-text="About Us">About Us</h2></div>
+
+
+<div class="about_us">
+  <div class="mission">
+    <span>MISSION</span>
+    <p>Our mission is to empower farmers by providing them with a platform to showcase their crops and reach a wider audience. We want to ensure that farmers get a fair price for their hard work and buyers get access to fresh, high-quality produce.</p>
+  </div>
+  <span>WELCOME</span>
+  <p>Welcome to AgriHub, an online marketplace connecting farmers and buyers. We understand the challenges faced by farmers in selling their crops and buyers in finding quality produce. That's why we have created AgriHub, a platform where farmers can easily add their crops with prices and buyers can easily purchase those crops. </p>
+  <span>CROP RECOMMENDATIONS</span>
+  <p>In addition to being a marketplace, AgriHub also provides farmers with personalized crop recommendations based on the condition of their soil. We believe that this service will help farmers make informed decisions and improve the productivity of their crops.</p>
+  
+  <span>OUR COMMITMENT</span>
+  <p>
+    Our team is made up of tech enthusiasts who are passionate about making a positive impact in the agricultural industry. We are committed to providing the best possible service to our users and continuously improving our platform.
+
+  </p>
+  <span>THANKS</span>
+  <p>
+    Thank you for choosing AgriHub. We look forward to helping you buy and sell quality crops.
+
+  </p>
+</div>
+
+
+  </div>
+</div>
+</body>
+</html>

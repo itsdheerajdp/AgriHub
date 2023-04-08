@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Buyer Register</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+        html {
+            height: 100%;
+            background: linear-gradient(241.99deg, rgba(192, 218, 237, 0.25) 0%, rgba(207, 211, 255, 0.25) 100%);
+        }
+        
+        body {
+            display: grid;
+            place-items: center;
+            height: 100%;
+            background-image: url(https://wallpapercave.com/wp/wp2757874.gif);
+        }
+        
+        .registrationform {
+            width: 40%;
+            display: grid;
+            place-items: center;
+            border-radius: 25px;
+            box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+        }
+        
+        @media (max-width: 767px) {
+            .registrationform {
+                width: 90%;
+            }
+        }
+        
+        @media (min-width: 767px) and (max-width: 1023px) {
+            .registrationform {
+                width: 50%;
+            }
+        }
+        
+        @media (min-width: 1360px) {
+            .registrationform {
+                width: 25%;
+            }
+        }
+        
+        .registrationform .formHeader {
+            margin: 10px 10px;
+            opacity: 0.5;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .registrationform .formWrapper {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .registrationform form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .registrationform form input {
+            font: italic 14px 'Raleway', sans-serif;
+            margin: 10px 10px;
+            padding: 20px 20px;
+            border: none;
+            background: none;
+            color: #555;
+            border-radius: 10px;
+            box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+        }
+        
+        .registrationform form input:focus {
+            outline: none;
+        }
+        
+        .registrationform .formFooter {
+            margin: 20px 10px;
+        }
+        
+        .registrationform .formFooter .submitButton {
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 10px 5px;
+            padding-top: 15px;
+            border: none;
+            color: #afafaf;
+            transition: ease-in-out 0.5s;
+            border-bottom: 1px ridge rgba(0, 0, 0, 0);
+            cursor: pointer;
+        }
+        
+        .registrationform .formFooter .submitButton:hover {
+            color: #6f9eb8;
+            transition: ease-in-out 0.5s;
+            border-bottom: 1px ridge #6f9eb8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="registrationform">
+        <div class="formHeader" style="color: white;">
+            <h1><b>Buyer</b></h1>
+        </div>
+        <div class="formWrapper">
+            <form action="/registerBuyer" method="post">
+                {{form.hidden_tag()}}
+
+                    {% if form.username.errors %}
+                       {{ form.username(class="form-control form-control-lg is-invalid")}}
+                       <div class="invalid-feedback">
+                        {% for error in form.username.errors%}
+                            <span>{{error}}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %} 
+                     {{form.username(placeholder="Username")}}
+                    {% endif %}
+
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                        {% for error in form.email.errors%}
+                            <span>{{error}}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{form.email(placeholder="Email Address")}}
+                    {% endif %}
+
+                    {% if form.password.errors %}
+                        {{ form.password(class="form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                        {% for error in form.password.errors%}
+                            <span>{{error}}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{form.password(placeholder="Password")}}
+                    {% endif %}
+
+
+                    {% if form.confirm_password.errors %}
+                        {{ form.confirm_password(class="form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                        {% for error in form.confirm_password.errors%}
+                            <span>{{error}}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{form.confirm_password(placeholder="Confrim Password")}}
+                    {% endif %}
+
+                <div class="formFooter" style="align-items: center; text-align: center;">
+                    <button type="submit" class="submitButton" style="border-radius: 15px; width: 150px; background-color: #ffffff;color: black;">Register</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+         <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

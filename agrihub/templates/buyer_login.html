@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
+    <title>Buyer Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 62.5%;
+        }
+        
+        .form {
+            width: 50rem;
+            margin: 5rem auto;
+            text-align: center;
+            border-radius: 1.5rem;
+            border: 1px solid #eee;
+            box-shadow: 0 1rem 3rem 0.03rem rgba(0, 0, 0, 0.1);
+            font-family: "Balsamiq Sans", cursive;
+        }
+        
+        .form__heading {
+            font-size: 3.6rem;
+            padding: 5rem 0;
+            color: #2ecc71;
+        }
+        
+        .form__group {
+            padding-bottom: 4rem;
+            position: relative;
+        }
+        
+        .form__input {
+            width: 30rem;
+            color: #aaa;
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            outline: none;
+            text-align: center;
+            font-size: 2.4rem;
+            font-family: inherit;
+        }
+        
+        .form__input:-webkit-autofill,
+        .form__input:-webkit-autofill:hover {
+            -webkit-text-fill-color: #aaa !important;
+            -webkit-box-shadow: 0 0 0 3rem white inset !important;
+        }
+        
+        .form__input::placeholder {
+            color: #ccc;
+        }
+        
+        .form__input:not(:placeholder-shown)+.form__label {
+            opacity: 1;
+            color: #ddd;
+            position: absolute;
+            top: 42px;
+            width: 100%;
+            font-size: 20px;
+        }
+        
+        .form__label {
+            display: block;
+            color: #ccc;
+            transition: all 0.4s ease;
+            opacity: 0;
+            position: absolute;
+            top: 2.8rem;
+            width: 100%;
+            font-size: 2.4rem;
+        }
+        
+        .btn {
+            margin: 0 auto;
+            margin-bottom: 6rem;
+            border: none;
+            color: #fff;
+            font-family: inherit;
+            font-size: 24px;
+            position: relative;
+            width: 15rem;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease-in;
+        }
+        
+        .btn__icon {
+            font-size: 25px;
+            position: absolute;
+            left: 10.5rem;
+        }
+        
+        .btn--large {
+            border-radius: 25px;
+            padding: 10px 35px 10px 40px;
+        }
+        
+        .btn--green {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        .btn--green:hover {
+            background-color: #28b062;
+        }
+        
+        .btn--green:hover .btn__icon {
+            position: absolute;
+            left: 12rem;
+            opacity: 0;
+            transition: all 0.5s ease-in;
+        }
+        
+        .btn--green:active {
+            background-color: #2ecc71;
+            outline: none;
+        }
+        
+        body {
+            background-image: url(https://i.pinimg.com/originals/cf/ec/88/cfec8819d8376a57c86e3c6e53ed618e.gif);
+        }
+    </style>
+</head>
+
+<body>
+
+    <form class="form" id="login" action="" method="post">
+        <h1 class="form__heading">Welcome</h1>
+        {{form.hidden_tag()}}
+        <div class="form__group">
+            {{form.email(class="form__input",placeholder="email address")}}
+        </div>
+        <div class="form__group">
+            {{form.password(class="form__input",placeholder="password")}}
+           
+        </div>
+        <button class="btn btn--large btn--green" form_id="login" type="submit">
+      Login
+      <ion-icon class="btn__icon" name="arrow-forward-outline"></ion-icon>
+    </button>
+    </form>
+
+</body>
+
+</html>

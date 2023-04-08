@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Agri Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='homepage.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <style>
+        body,
+        html {
+            background-color: black;
+            color: white;
+            background-image: url(https://i.pinimg.com/originals/b2/fe/91/b2fe91505525ba942ae7d85a2cd7a6d4.gif);
+        }
+        
+        nav {
+            position: absolute;
+            top: 10%;
+            right: 0;
+            left: 0;
+            width: 300px;
+            display: table;
+            margin: 0 auto;
+            transform: translateY(-50%);
+            white-space: nowrap;
+        }
+        
+        nav a {
+            position: relative;
+            width: 33.333%;
+            display: table-cell;
+            text-align: center;
+            color: #949494;
+            text-decoration: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            padding: 10px 20px;
+            transition: 0.2s ease color;
+        }
+        
+        nav a:before,
+        nav a:after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 0.2s ease transform;
+        }
+        
+        nav a:before {
+            top: 0;
+            left: 10px;
+            width: 6px;
+            height: 6px;
+        }
+        
+        nav a:after {
+            top: 5px;
+            left: 18px;
+            width: 4px;
+            height: 4px;
+        }
+        
+        nav a:nth-child(1):before {
+            background-color: yellow;
+        }
+        
+        nav a:nth-child(1):after {
+            background-color: red;
+        }
+        
+        nav a:nth-child(2):before {
+            background-color: #00e2ff;
+        }
+        
+        nav a:nth-child(2):after {
+            background-color: #89ff00;
+        }
+        
+        nav a:nth-child(3):before {
+            background-color: purple;
+        }
+        
+        nav a:nth-child(3):after {
+            background-color: palevioletred;
+        }
+        nav a:nth-child(4):before {
+            background-color: yellow;
+        }
+        
+        nav a:nth-child(4):after {
+            background-color: red;
+        }
+        
+        #indicator {
+            position: absolute;
+            left: 5%;
+            bottom: 0;
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 5px;
+            transition: 0.2s ease left;
+        }
+        
+        nav a:hover {
+            color: #fff;
+        }
+        
+        nav a:hover:before,
+        nav a:hover:after {
+            transform: scale(1);
+        }
+        
+        nav a:nth-child(1):hover~#indicator {
+            background: linear-gradient(130deg, yellow, red);
+        }
+        
+        nav a:nth-child(2):hover~#indicator {
+            left: 24%;
+            background: linear-gradient(130deg, #00e2ff, #89ff00);
+        }
+        
+        nav a:nth-child(3):hover~#indicator {
+            left: 53%;
+            background: linear-gradient(130deg, purple, palevioletred);
+        }
+        nav a:nth-child(4):hover~#indicator {
+            left: 76%;
+            background: linear-gradient(130deg, yellow, red);
+        }
+        
+        html,
+        body {
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+        .news {
+            margin-top: 8rem;
+            font-family: "Roboto", sans-serif;
+            color: #10182f;
+        }
+        
+        .news .container {
+            display: flex;
+            width: 1040px;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            width: auto;
+        }
+        
+        .news .card {
+            margin: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 300px;
+        }
+        
+        .news .card-header img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .news .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            min-height: 250px;
+        }
+        
+        .news .tag {
+            background: #cccccc;
+            border-radius: 50px;
+            font-size: 12px;
+            margin: 0;
+            color: #fff;
+            padding: 2px 10px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        
+        .news .tag-teal {
+            background-color: #47bcd4;
+        }
+        
+        .news .tag-purple {
+            background-color: #5e76bf;
+        }
+        
+        .news .tag-pink {
+            background-color: #cd5b9f;
+        }
+        
+        .news .card-body p {
+            font-size: 13px;
+            margin: 0 0 40px;
+        }
+        
+        .news .user {
+            display: flex;
+            margin-top: auto;
+        }
+        
+        .news .user img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .news .user-info h5 {
+            margin: 0;
+        }
+        
+        .news .user-info small {
+            color: #545d7a;
+        }
+        
+        @media screen and (max-width:959px) {
+            .news {
+                margin-top: 96rem;
+            }
+            .news .card {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        
+        @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+        body {
+            font-family: "Open Sans", sans-serif;
+            font-size: 16px;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+        }
+        
+        .btn {
+            margin-bottom: 0.5rem;
+            margin-right: 0.5rem;
+        }
+        
+        .btn:last-child {
+            margin-right: 0;
+        }
+        
+        @media screen and (min-width: 960px) {
+            .card {
+                width: calc(960px - 4rem);
+            }
+        }
+        /******************************************************************************/
+        /* STYLES RELATED TO EXPERIMENT BUTTONS */
+        /******************************************************************************/
+        
+        .btn {
+            --color: #000;
+            --background-color: #d8d8d8;
+            --border-color: #c5c5c5;
+            color: var(--color);
+            font-family: inherit;
+            background-color: var(--background-color);
+            padding: 0.6rem 0.9rem;
+            border: solid 1px var(--border-color);
+            outline: none;
+            position: relative;
+            border-radius: 0.5rem;
+            user-select: none;
+            box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.4), 0 -0.3rem 0.6rem rgba(0, 0, 0, 0.2) inset;
+            transition: box-shadow 64ms ease-out;
+        }
+        
+        .btn:after {
+            content: "";
+            background-color: #fff;
+            width: 75%;
+            height: 12.5%;
+            position: absolute;
+            top: 0.15rem;
+            left: 12.5%;
+            border-radius: 50%;
+            filter: blur(0.15rem);
+            transition: opacity 64ms ease-out;
+        }
+        
+        .btn:active {
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0.4), 0 0.4rem 1rem rgba(0, 0, 0, 0.3) inset;
+        }
+        
+        .btn:active:after {
+            opacity: 0;
+        }
+        
+        .btn-info {
+            --color: #fff;
+            --background-color: #0091ea;
+            --border-color: #0079c4;
+        }
+        
+        .btn-info:active {
+            --color: #ececec;
+        }
+        
+        .btn-success {
+            --color: #fff;
+            --background-color: #00c853;
+            --border-color: #00a243;
+        }
+        
+        .btn-success:active {
+            --color: #ececec;
+        }
+        
+        .btn-warning {
+            --color: #3e2723;
+            --background-color: #ffc400;
+            --border-color: #d9a700;
+        }
+        
+        .btn-warning:active {
+            --color: #261815;
+        }
+        
+        .btn-error {
+            --color: #fff;
+            --background-color: #d50000;
+            --border-color: #af0000;
+        }
+        
+        .btn-error:active {
+            --color: #ececec;
+        }
+        
+        .btn-dark {
+            --color: #fff;
+            --background-color: #303030;
+            --border-color: #1d1d1d;
+        }
+        
+        .btn-dark:active {
+            --color: #ececec;
+        }
+    </style>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <nav id="nav">
+        <a href="/">Home</a>
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+        <a href="/aboutus">ABOUT US</a>
+        <div id="indicator"></div>
+            </nav>
+    <div class="news">
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://www.consultancy.in/illustrations/news/spotlight/2021-07-12-144658915-Indias-agritech-sector-could-touch-35-billion-by-2025_-says-Bain.jpg" alt="rover" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-teal">News</span>
+                    <h4>
+                        Stay Up-to-Date on the latest Headlines from around the world
+                    </h4>
+                    <p>
+                        A way to get informations about the latest news from around the world
+                    </p>
+                    <div class="user">
+                        <a href="{{url_for('news')}}">
+                        <button class="btn btn-warning">Get News</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://www.fao.org/uploads/pics/f7969ae6e2.jpg" alt="ballons" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-purple">Price</span>
+                    <h4>
+                        Stay updated with the latest Market prices of different crops
+                    </h4>
+                    <p>
+                        A way to get reliable and timely information on the prices of crops in various ndian markets
+                    </p>
+                    <div class="user">
+                        <a href="{{url_for('marketprice')}}"> <button class="btn" style="--color: #ffffff; --background-color: #ff4081; --border-color: #ec407a;">Go to Market price</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv90t5SW-rXMBHTZqm5OD9byBexKiiyiYfPg&usqp=CAU" alt="city" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-pink">recommendations</span>
+                    <h4>
+                        Smart Crop Recommendations for Indian Farmers </h4>
+                    <p>
+                        A way to get recommendations based on your field conditions, weather data, and market demand. Here we'll analyzes multiple factors to suggest the most suitable crop for you.
+                    </p>
+
+                    <div class="user">
+
+
+                        <a href="{{url_for('predictor')}}"> <button class="btn btn-info">Get Recommendations</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- partial -->
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <div class='wrapper'>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+    </div>
+
+
+    <!-- partial -->
+
+</body>
+
+</html>

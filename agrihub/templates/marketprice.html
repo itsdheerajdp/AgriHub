@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Price</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .iframecontainer {
+            position: relative;
+            width: 1100px;
+            height: 834px;
+            overflow: hidden;
+        }
+        
+        .iframecontent {
+            position: absolute;
+            top: -150px;
+            width: 1100px;
+            height: 954px;
+            bottom: 500px;
+            left: 0px;
+        }
+        
+        @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+        .container {
+            display: grid;
+            grid-template-columns: 4fr 4fr;
+            font-family: Oswald, sans-serif;
+            font-weight: bold;
+        }
+        
+        .title__head {
+            color: white;
+            text-transform: uppercase;
+            transform: rotate(180deg) translate(-4px);
+            writing-mode: vertical-lr;
+            text-align: center;
+            margin-bottom: 0;
+            margin-left: 1rem;
+            font-size: 6rem;
+            width: 100%;
+            line-height: 1;
+        }
+        
+        @media screen and (max-width: 1320px) {
+            .title__head {
+                font-size: 4rem;
+                margin-left: 0.5rem;
+            }
+        }
+        
+        @media screen and (max-width:1081px) and (min-width:980px) {
+            .title__head {
+                font-size: 2rem;
+            }
+            .iframecontainer {
+                width: 800px;
+                height: 1200px;
+            }
+            .iframecontent {
+                top: 80px;
+                width: 850px;
+                height: 1174px;
+                left: 0px;
+            }
+        }
+        
+        @media screen and (max-width:980px) and (min-width:541px) {
+            .title__head {
+                font-size: 3rem;
+                margin-left: 0rem;
+            }
+            .iframecontainer {
+                width: 400px;
+                height: 1050px;
+            }
+            .iframecontent {
+                top: -210px;
+                width: 400px;
+                height: 1100px;
+                left: 0px;
+            }
+        }
+        
+        @media screen and (max-width:541px) and (min-width:430px) {
+            .title__head {
+                font-size: 2rem;
+                margin-left: 0rem;
+            }
+            .iframecontainer {
+                width: 400px;
+                height: 1050px;
+            }
+            .iframecontent {
+                top: -80px;
+                width: 400px;
+                height: 1100px;
+                left: 0px;
+            }
+        }
+        
+        @media screen and (max-width:430px) and (min-width:412px) {
+            .title__head {
+                font-size: 2rem;
+                margin-left: 0rem;
+            }
+            .iframecontainer {
+                width: 400px;
+                height: 1050px;
+            }
+            .iframecontent {
+                top: -120px;
+                width: 400px;
+                height: 1100px;
+                left: 0px;
+            }
+        }
+        
+        @media screen and (max-width:412px) and (min-width:370px) {
+            .title__head {
+                font-size: 2rem;
+                margin-left: 0rem;
+            }
+            .iframecontainer {
+                width: 400px;
+                height: 1050px;
+            }
+            .iframecontent {
+                top: -135px;
+                width: 400px;
+                height: 1100px;
+                left: 0px;
+            }
+        }
+        
+        @media screen and (max-width:370px) and (min-width:380px) {
+            .title__head {
+                font-size: 2rem;
+                margin-left: 0rem;
+            }
+            .iframecontainer {
+                width: 300px;
+                height: 1050px;
+            }
+            .iframecontent {
+                top: -115px;
+                width: 300px;
+                height: 1100px;
+                left: 0px;
+            }
+        }
+        
+        @media screen and (max-width:380px) and (min-width:280px) {
+            .title__head {
+                font-size: 2rem;
+                margin-left: 0rem;
+            }
+            .iframecontainer {
+                width: 250px;
+                height: 1250px;
+            }
+            .iframecontent {
+                top: 5px;
+                width: 250px;
+                height: 1200px;
+                left: 0px;
+            }
+        }
+        
+        @media screen and (max-width:280px) {
+            .title__head {
+                font-size: 2rem;
+                margin-left: 0rem;
+            }
+            .iframecontainer {
+                width: 250px;
+                height: 1250px;
+            }
+            .iframecontent {
+                top: 5px;
+                width: 250px;
+                height: 1150px;
+                left: 0px;
+            }
+        }
+        
+        body {
+            background-image: url(https://i.pinimg.com/originals/6f/7c/63/6f7c63991726d61d63730682e791d78c.gif);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h1 class="title__head">MARKET PRICE</h1>
+        </div>
+    </div>
+    <div class="content">
+        <div class="iframecontainer">
+            <iframe src="https://www.agri.live/India_Market_Prices_view.php" scrolling="no" class="iframecontent"></iframe>
+        </div>
+    </div>
+</body>
+
+</html>

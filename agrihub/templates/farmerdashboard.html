@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Agri Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='homepage.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <style>
+       nav {
+            position: absolute;
+            top: 10%;
+            right: 0;
+            left: 0;
+            width: 319px;
+            display: table;
+            margin: 0 auto;
+            transform: translateY(-50%);
+        }
+        
+        nav a {
+            position: relative;
+            width: 33.333%;
+            display: table-cell;
+            text-align: center;
+            color: #949494;
+            text-decoration: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            padding: 10px 20px;
+            transition: 0.2s ease color;
+        }
+        
+        nav a:before,
+        nav a:after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 0.2s ease transform;
+        }
+        
+        nav a:before {
+            top: 0;
+            left: 10px;
+            width: 6px;
+            height: 6px;
+        }
+        
+        nav a:after {
+            top: 5px;
+            left: 18px;
+            width: 4px;
+            height: 4px;
+        }
+        
+        nav a:nth-child(1):before {
+            background-color: yellow;
+        }
+        
+        nav a:nth-child(1):after {
+            background-color: red;
+        }
+        
+        nav a:nth-child(2):before {
+            background-color: #00e2ff;
+        }
+        
+        nav a:nth-child(2):after {
+            background-color: #89ff00;
+        }
+        
+        nav a:nth-child(3):before {
+            background-color: purple;
+        }
+        
+        nav a:nth-child(3):after {
+            background-color: palevioletred;
+        }
+        
+        #indicator {
+            position: absolute;
+            left: 5%;
+            bottom: 0;
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 5px;
+            transition: 0.2s ease left;
+        }
+        
+        nav a:hover {
+            color: #fff;
+        }
+        
+        nav a:hover:before,
+        nav a:hover:after {
+            transform: scale(1);
+        }
+        
+        nav a:nth-child(1):hover~#indicator {
+            background: linear-gradient(130deg, yellow, red);
+        }
+        
+        nav a:nth-child(2):hover~#indicator {
+            left: 34%;
+            background: linear-gradient(130deg, #00e2ff, #89ff00);
+        }
+        
+        nav a:nth-child(3):hover~#indicator {
+            left: 70%;
+            background: linear-gradient(130deg, purple, palevioletred);
+        }
+       
+        
+        body {
+            display: grid;
+            place-items: center;
+            background-image: url(https://wallpapercave.com/wp/wp2757874.gif);
+            background-repeat: no-repeat;
+        }
+        
+        .registrationform {
+            width: 40%;
+            display: grid;
+            place-items: center;
+            border-radius: 25px;
+            box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+        }
+        
+        @media (max-width: 767px) {
+            .registrationform {
+                width: 90%;
+            }
+        }
+        
+        @media (min-width: 767px) and (max-width: 1023px) {
+            .registrationform {
+                width: 50%;
+            }
+        }
+        
+        @media (min-width: 1360px) {
+            .registrationform {
+                width: 25%;
+            }
+        }
+        
+        .registrationform .formHeader {
+            margin: 10px 10px;
+            opacity: 0.5;
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        .registrationform .formWrapper {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .registrationform form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .registrationform form input {
+            font: italic 14px 'Raleway', sans-serif;
+            margin: 10px 10px;
+            padding: 20px 20px;
+            border: none;
+            background: none;
+            color: #555;
+            border-radius: 10px;
+            box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px;
+        }
+        
+        .registrationform form input:focus {
+            outline: none;
+        }
+        
+        .registrationform .formFooter {
+            margin: 20px 10px;
+        }
+        
+        .registrationform .formFooter .submitButton {
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 10px 5px;
+            padding-top: 15px;
+            border: none;
+            color: #afafaf;
+            transition: ease-in-out 0.5s;
+            border-bottom: 1px ridge rgba(0, 0, 0, 0);
+            cursor: pointer;
+        }
+        
+        .registrationform .formFooter .submitButton:hover {
+            color: #6f9eb8;
+            transition: ease-in-out 0.5s;
+            border-bottom: 1px ridge #6f9eb8;
+        }
+    </style>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <nav id="nav" >
+        <a href="#">AgriHub</a>
+        <a href="{{url_for('logout')}}">Logout</a>
+        <div id="indicator"></div>
+            </nav>
+   
+    <!-- partial -->
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <div class='wrapper'>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+    </div>
+
+
+    <!-- partial -->
+    <div class="registrationform" style="margin-top: 8rem;">
+        <div class="formHeader" >
+            <h1 style="color: white;"><b>Add Your Crop</b></h1>
+        </div>
+        <div class="formWrapper">
+            <form action="/farmerdashboard" method="POST">
+                    {{form.hidden_tag()}}
+
+                    {% if form.crop_name.errors %}
+                       {{ form.crop_name(class="form-control form-control-lg is-invalid")}}
+                       <div class="invalid-feedback">
+                        {% for error in form.crop_name.errors%}
+                            <span>{{error}}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %} 
+                     {{form.crop_name(placeholder="Crop Name")}}
+                    {% endif %}
+
+                    {% if form.crop_info.errors %}
+                    {{ form.crop_info(class="form-control form-control-lg is-invalid")}}
+                    <div class="invalid-feedback">
+                     {% for error in form.crop_info.errors%}
+                         <span>{{error}}</span>
+                     {% endfor %}
+                 </div>
+                 {% else %} 
+                  {{form.crop_info(placeholder="Crop Info")}}
+                 {% endif %}
+
+                    {% if form.crop_rate.errors %}
+                        {{ form.crop_rate(class="form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                        {% for error in form.crop_rate.errors%}
+                            <span>{{error}}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{form.crop_rate(placeholder="Crop Rate( Rs per 100 kg)")}}
+                    {% endif %}
+                    
+
+                    {% if form.address.errors %}
+                        {{ form.crop_rate(class="form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                        {% for error in form.address.errors%}
+                            <span>{{error}}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{form.address(placeholder="Enter your Address to sell your crop at our center")}}
+                    {% endif %}
+
+
+                    
+                <div class="formFooter" style="align-items: center; text-align: center;">
+                    
+                    {{ form.add_crop(class="btn btn-outline-info") }}
+                </div>
+            </form>
+        </div>
+    </div>
+
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+
+</body>
+
+</html>
