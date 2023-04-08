@@ -7,3 +7,5 @@ AgriHub is a web application that provides an online market for farmers to sell 
 - Crop recommendation system uses machine learning to suggest crops that are likely to yield the best results in a given region.
 - Real-time mandi rates provide up-to-date pricing information to farmers.
 - User-friendly interface for easy navigation and use.
+
+### visit our website [AgriHub](https://agrihubkandigaipc.onrender.com/)
