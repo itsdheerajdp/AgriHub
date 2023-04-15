@@ -24,5 +24,26 @@ AgriHub is a web application developed using Flask framework that provides a pla
  `cd AgriHub` <br>
 3. Install the dependencies <br>
 `pip install -r requirements.txt`<br>
+4. Run the application <br>
+ `python run.py` <br>
+ 
+## Usage
+
+To use the application, navigate to `http://localhost:5000` in your web browser.
+
+- To register as a farmer or a buyer, click on the corresponding registration link in the navigation bar.
+- After registering, login with your credentials using the login link in the navigation bar.
+- To add a crop, click on the "Add Crop" button in the farmer dashboard.
+- To view available crops, login as a buyer and navigate to the buyer dashboard.
+- The market price page and crop recommendation page are accessible from the homepage.
+
+## Contributing
+
+We welcome contributions from anyone. Please see our [contributing guidelines](CONTRIBUTING.md) for more information.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
 
 ### visit our website [AgriHub](https://agrihubkandigaipc.onrender.com/)
