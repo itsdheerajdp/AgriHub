@@ -29,7 +29,7 @@ AgriHub is a web application developed using Flask framework that provides a pla
  
 ## Usage
 
-To use the application, navigate to `http://localhost:5000` in your web browser.
+To use the application, navigate to `http://127.0.0.1:5000/` in your web browser.
 
 - To register as a farmer or a buyer, click on the corresponding registration link in the navigation bar.
 - After registering, login with your credentials using the login link in the navigation bar.
