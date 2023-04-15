@@ -39,11 +39,8 @@ To use the application, navigate to `http://localhost:5000` in your web browser.
 
 ## Contributing
 
-We welcome contributions from anyone. Please see our [contributing guidelines](CONTRIBUTING.md) for more information.
+We welcome contributions from anyone.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 
 ### visit our website [AgriHub](https://agrihubkandigaipc.onrender.com/)
