@@ -19,10 +19,10 @@ AgriHub is a web application developed using Flask framework that provides a pla
 ## Installation
 
 1. Clone the repository <br>
-`git clone https://github.com/itsdheerajdp/AgriHub.git`
+`git clone https://github.com/itsdheerajdp/AgriHub.git` <br>
 2. Navigate to the project directory<br>
- `cd AgriHub`
-3. Install the dependencies
-`pip install -r requirements.txt`
+ `cd AgriHub` <br>
+3. Install the dependencies <br>
+`pip install -r requirements.txt`<br>
 
 ### visit our website [AgriHub](https://agrihubkandigaipc.onrender.com/)
