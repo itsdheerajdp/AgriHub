@@ -1,11 +1,24 @@
 # AgriHub
-AgriHub is a web application that provides an online market for farmers to sell their crops and for buyers to purchase them. Additionally, the application includes a crop recommendation system using machine learning and real-time mandi rates to enable farmers to sell their crops at a good price.
+
+AgriHub is a web application developed using Flask framework that provides a platform for farmers and buyers to connect with each other. The application allows farmers to add their crops to the platform and buyers can view the crops available for sale in their dashboard after logging in.
 
 ## Features
-- Farmers can create an account, list their crops, and set their own prices.
-- Buyers can create an account and purchase crops from listed products.
-- Crop recommendation system uses machine learning to suggest crops that are likely to yield the best results in a given region.
-- Real-time mandi rates provide up-to-date pricing information to farmers.
-- User-friendly interface for easy navigation and use.
+
+- Farmer and buyer registration and login
+- Farmer can add their crops to the platform
+- Buyer can view crops available for sale in their dashboard
+- Market price page that shows the updated market price of crops
+- Crop recommendation page that recommends suitable crops based on soil health and weather conditions
+
+## Technologies Used
+
+- Flask
+- HTML/CSS/JS
+- SQLite
+
+## Installation
+
+1. Clone the repository
+`git clone https://github.com/username/repo.git`
 
 ### visit our website [AgriHub](https://agrihubkandigaipc.onrender.com/)
