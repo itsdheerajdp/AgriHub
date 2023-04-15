@@ -1,4 +1,4 @@
-# [AgriHub](https://agrihubkandigaipc.onrender.com/)
+# [AgriHub](https://agrihub.onrender.com/)
 
 AgriHub is a web application developed using Flask framework that provides a platform for farmers and buyers to connect with each other. The application allows farmers to add their crops to the platform and buyers can view the crops available for sale in their dashboard after logging in.
 
