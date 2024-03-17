@@ -34,7 +34,7 @@ AgriHub's market price feature displays real-time market prices for various crop
 
 ## Installation
 1. Clone the repository:
-   `git clone https://github.com/your-username/agrihub.git`.
+   `git clone https://github.com/itsdheerajdp/agrihub.git`.
 2. Install dependencies:
   `pip install -r requirements.txt`
 3. Run the Flask application:
